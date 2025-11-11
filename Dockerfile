@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
     chromium-driver \
     libglib2.0-0 \
     libnss3 \
-    libgconf-2-4 \
     libxss1 \
     libasound2 \
     libx11-6 \
@@ -27,8 +26,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # 6. Mở port cho Streamlit (mặc định 8501)
-EXPOSE 8501
+EXPOSE 8503
 
 # 7. Lệnh chạy app Streamlit
 #    Nếu file chính không phải app.py thì Sếp đổi lại tên file
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "app.py", "--server.port=8503", "--server.address=0.0.0.0"]
