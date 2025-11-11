@@ -24,8 +24,5 @@ jobs:
           script: |
             echo "🚀 Deploying ORC app to VPS..."
             cd ~/ORC
-            git pull origin main
-            cd ~
-            docker compose build orc-app
-            docker compose up -d orc-app
+            ./deployOrc.sh
             echo "✅ Deployment completed successfully!"
